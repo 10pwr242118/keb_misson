@@ -16,7 +16,7 @@ def graph_generator_a(graph_str):
 
 
 def graph_generator(edge_str):
-    global store_array
+    global nodeName_data
     splited_list = edge_str.split()
     # print(splited_list)
     edge_list= []
@@ -37,13 +37,13 @@ def graph_generator(edge_str):
 
 
 def print_graph(g) :
-    global store_array
+    global nodeName_data
     print('	', end='')
     for v in range(g.size) :
-        print("%9s" % store_array[v][0], end = ' ')
+        print("%9s" % nodeName_data[v][0], end = ' ')
     print()
     for row in range(g.size) :
-        print("%9s" %store_array[row][0], end = ' ')
+        print("%9s" %nodeName_data[row][0], end = ' ')
         for col in range(g.size) :
             print("%8d" % g.graph[row][col], end = ' ')
         print()
@@ -51,16 +51,16 @@ def print_graph(g) :
 
 
 def graph_put_data(graph):
-    global store_array
+    global nodeName_data
     for idx in range(graph.size):
-        graph.graph[idx][idx] = store_array[idx][1]
+        graph.graph[idx][idx] = nodeName_data[idx][1]
     print("data is store in data")
     print_graph(graph)
     return graph
 
 
 def find_max_stock(g):
-    global store_array
+    global nodeName_data
 
     stack = []
     visitedAry = []
@@ -91,11 +91,14 @@ def find_max_stock(g):
             current = stack.pop()
     # print(stock_temp)
     sorted_temp = sorted(stock_temp ,key=lambda x :x[1] , reverse=True)
-    print(f"{store_array[sorted_temp[0][0]][0]} has most honey-butter chip. Stock is {sorted_temp[0][1]}")
+    print(f"{nodeName_data[sorted_temp[0][0]][0]} has most honey-butter chip. Stock is {sorted_temp[0][1]}")
+
 
 if __name__ == '__main__':
     str= "0-1 0-2 1-2 1-3 2-3 3-4"
-    store_array = [['GS25', 30], ['CU', 60], ['Seven11', 10], ['MiniStop', 90], ['Emart24', 40]]
+    node_name="fuck fuck fuck fuck fuck"
+    nodeName_data = [[i, 0] for i in node_name.split(" ")]
+    nodeName_data = [['GS25', 30], ['CU', 60], ['Seven11', 10], ['MiniStop', 90], ['Emart24', 40]]
 
     graph_one=graph_generator(str)
     graph_one= graph_put_data(graph_one)
