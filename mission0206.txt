@@ -1,0 +1,20 @@
+chapter 5
+    Q1
+        2,4
+    Q2
+        node1.link = node1 
+    Q3
+        node2.link = node3.link
+        del(node3) 
+    Q4
+        2, 3
+    Q5.
+        current=head
+        last=last.link
+        last.link=head 
+    Q6.
+        return current
+        current.link != head
+        current= current.link
+
+chapter 6
