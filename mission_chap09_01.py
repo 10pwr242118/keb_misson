@@ -96,7 +96,7 @@ def find_max_stock(g):
 
 if __name__ == '__main__':
     str= "0-1 0-2 1-2 1-3 2-3 3-4"
-    node_name="fuck fuck fuck fuck fuck"
+    node_name="a b c d e f g"
     nodeName_data = [[i, 0] for i in node_name.split(" ")]
     nodeName_data = [['GS25', 30], ['CU', 60], ['Seven11', 10], ['MiniStop', 90], ['Emart24', 40]]
 
