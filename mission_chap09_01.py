@@ -76,13 +76,13 @@ def find_max_stock(g):
         next = None
         for vertex in range(g.size-1) :
             if g.graph[current][vertex+1] == 1 :
-                if vertex+1 in visitedAry :	# 방문한 적이 있는 편의점이면 탈락
+                if vertex+1 in visitedAry :
                     pass
-                else :			# 방문한 적이 없는 편의점이면 다음 편의점으로 지정
+                else :
                     next = vertex+1
                     break
 
-        if next != None :				# 방문할 다음 편의점이 있는 경우
+        if next != None :
             current = next
             stack.append(current)
             visitedAry.append(current)
